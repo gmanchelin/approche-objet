@@ -17,10 +17,6 @@ public class TestPersonne {
 		
 		personne1.changeAdresse(adresse2);
 		
-		if(personne1.equals(personne2)) {
-			
-		}
-		
 	}
 
 }

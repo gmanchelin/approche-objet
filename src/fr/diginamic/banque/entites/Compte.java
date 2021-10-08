@@ -23,6 +23,11 @@ public class Compte {
 		this.numCompte = numCompte;
 		this.solde = solde;
 	}
+	
+	@Override
+	public String toString() {
+		return "N° de compte : " + numCompte + "; Solde : " + solde + "€";
+	}
 
 	/**
 	 * Getters et setters
@@ -42,7 +47,5 @@ public class Compte {
 	public void setSolde(float solde) {
 		this.solde = solde;
 	}
-
-	
 
 }
