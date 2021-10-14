@@ -29,6 +29,7 @@ public class TestTri {
 		 * Ici les Collections.sort trient respectivement : 
 		 * - par ordre alphabétique de nom de villes
 		 * - par ordre croissant du nombre d'habitants
+		 * Et ce grâce aux Comparators qui implémentent Comparator<Ville>
 		 */
 		Collections.sort(villes, new ComparatorNom());
 		System.out.println(villes);
