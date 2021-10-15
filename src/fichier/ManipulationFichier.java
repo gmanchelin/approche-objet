@@ -22,7 +22,7 @@ public class ManipulationFichier {
 		 	/**
 		 	 * Récupération du fichier et création d'un nouveau ne comportant que :
 		 	 * - Les villes de plus de 25000 habitants
-		 	 * - Uniquement les informations de nom de ville, de code département et de population
+		 	 * - Uniquement les informations de nom de ville, de code département et de population 
 		 	 */
 	        Path pathFile = Paths.get("C:\\Users\\Trigaltz\\Documents\\COURS\\2021-2023 - CDA\\02 - Java\\6 - Java objet\\J5_J6 - Cours\\TP\\recensement.csv");
 	        List<String> lines = Files.readAllLines(pathFile, StandardCharsets.UTF_8);
