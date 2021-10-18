@@ -15,10 +15,15 @@ public class ManipulationFichier {
 		 	/**
 		 	* Copier/coller du fichier recensement.csv dans le même répertoire (autre nom)
 		  	*/
-		 	Path pathOrigine = Paths.get("C:\\%Users%\\Trigaltz\\Documents\\COURS\\2021-2023 - CDA\\02 - Java\\6 - Java objet\\J5_J6 - Cours\\TP\\recensement.csv");
+		 	Path pathOrigine = Paths.get("C:\\Users\\Trigaltz\\Documents\\COURS\\2021-2023 - CDA\\02 - Java\\6 - Java objet\\J5_J6 - Cours\\TP\\recensement.csv");
 		 	Path pathDestination = Paths.get("C:\\Users\\Trigaltz\\Documents\\COURS\\2021-2023 - CDA\\02 - Java\\6 - Java objet\\J5_J6 - Cours\\TP\\recensement2.csv");
 		 	Files.copy(pathOrigine, pathDestination);
-		 
+		 	
+		 	/**
+		 	 * Lecture du fichier
+		 	 */
+		 	List<String> lecture = Files.readAllLines(pathOrigine, StandardCharsets.UTF_8);
+		 	
 		 	/**
 		 	 * Récupération du fichier et création d'un nouveau ne comportant que :
 		 	 * - Les villes de plus de 25000 habitants
