@@ -13,13 +13,16 @@ public class Ville {
 
 	}
 
+	public Ville(String nomCommune) {
+		this.nomCommune = nomCommune;
+	}
 
 
-	public Ville(String codeRegion2, String nomRegion, String codeDpt2, String codeCommune2, String nomCommune, int popTotale) {
-		this.codeRegion = codeRegion2;
+	public Ville(String codeRegion, String nomRegion, String codeDpt, String codeCommune, String nomCommune, int popTotale) {
+		this.codeRegion = codeRegion;
 		this.nomRegion = nomRegion;
-		this.codeDpt = codeDpt2;
-		this.codeCommune = codeCommune2;
+		this.codeDpt = codeDpt;
+		this.codeCommune = codeCommune;
 		this.nomCommune = nomCommune;
 		this.popTotale = popTotale;
 	}
@@ -99,13 +102,20 @@ public class Ville {
 
 
 	/**
-	 * RedÈfinition de la mÈthode toString()
+	 * Red√©finition de la m√©thode toString(), TP m√©thode equals
 	 */
 	@Override
 	public String toString() {
-		return nomCommune + "(code " + codeCommune + ") : RÈgion " + nomRegion + "(" + codeRegion + "), dÈpartement " + codeDpt + ", " + popTotale + " habitants";
+		return nomCommune + "(code " + codeCommune + ") : R√©gion " + nomRegion + "(" + codeRegion + "), d√©partement " + codeDpt + ", " + popTotale + " habitants";
+	}
+	
+	@Override
+	public boolean equals(Object object) {
+		if(!(object instanceof Ville)) {
+			return false;
+		}
+		Ville other = (Ville) object;
+		return nomCommune.equals(other.getNomCommune());
 	}
 
-	
-	
 }

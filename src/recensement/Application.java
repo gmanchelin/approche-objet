@@ -20,14 +20,14 @@ public class Application {
 
 
 		/**
-		 * Création du fichier villes.csv qui comporte les infos du fichier recensement.csv
-		 * Mais uniquement celles dont on a besoin pour créer une instance de Ville
+		 * Crï¿½ation du fichier villes.csv qui comporte les infos du fichier recensement.csv
+		 * Mais uniquement celles dont on a besoin pour crï¿½er une instance de Ville
 		 */
         List<String> listD = new ArrayList<String>();
         
         /**
-         * Pour l'étape 4 & 5 de l'exercice, j'initialise des int à 0 pour stocker 
-         * la population totale de l'Hérault, et la ville ayant la plus faible population
+         * Pour l'ï¿½tape 4 & 5 de l'exercice, j'initialise des int ï¿½ 0 pour stocker 
+         * la population totale de l'Hï¿½rault, et la ville ayant la plus faible population
          */
         int popHerault = 0;
         int petiteVilleHerault = 0;
@@ -63,22 +63,22 @@ public class Application {
             }
             
             /**
-             * Population totale de l'Hérault
+             * Population totale de l'Hï¿½rault
              */
             if (tab[2].equals("34")) {
             	popHerault = popHerault + Integer.parseInt(tab[tab.length-1].replaceAll(" ", ""));
             }
             
             /**
-             * Premier if pour mettre dans petiteVilleHerault la population de la première ville
+             * Premier if pour mettre dans petiteVilleHerault la population de la premiï¿½re ville
              */
             if(tab[2].equals("34") && petiteVilleHerault == 0) {
             	petiteVilleHerault = Integer.parseInt(tab[tab.length-1].replaceAll(" ", ""));
             } 
             
             /**
-             * Second if pour tester si la valeur de la pop totale de la ville est inférieure à
-             * celle de petiteVilleHerault, si oui, elle prend la valeur de la pop totale inférieure
+             * Second if pour tester si la valeur de la pop totale de la ville est infï¿½rieure ï¿½
+             * celle de petiteVilleHerault, si oui, elle prend la valeur de la pop totale infï¿½rieure
              */
             if(tab[2].equals("34") && Integer.parseInt(tab[tab.length-1].replaceAll(" ", "")) < petiteVilleHerault) {
             	petiteVilleHerault = Integer.parseInt(tab[tab.length-1].replaceAll(" ", ""));
@@ -89,12 +89,33 @@ public class Application {
         }
         
         /**
-         * Affichage de la population totale de l'Hérault
-         * et des infos de la plus petite ville de l'Hérault
+         * Affichage de la population totale de l'Hï¿½rault
+         * et des infos de la plus petite ville de l'Hï¿½rault
          */
-        System.out.println("Population totale de l'Hérault : " + popHerault);
+        System.out.println("Population totale de l'Hï¿½rault : " + popHerault);
         System.out.println(objectPetiteVilleHerault.toString());
         Files.write(pathD, listD);
+        
+        /**
+         * TP mÃ©thode equals 
+         */
+        Ville testVille1 = new Ville("Nantes");
+        Ville testVille2 = new Ville("Nantes");
+        System.out.println(testVille1.equals(testVille2)); //retourne true (voir Override equals dans Ville)
+        testVille1.nomCommune = "Angers";
+        System.out.println(testVille1.equals(testVille2)); //retourne false, car les valeurs sont maintenant diffÃ©rentes
+        testVille1.nomCommune = "Nantes";
+        System.out.println(testVille1 == testVille2); //retourne false, car == compare les adresses, et que celles-ci sont diffÃ©rentes 
+        
+        /**
+         * Pour que le == retourne true, je dois faire en sorte que
+         * si les valeurs sont les mÃªmes, mais que les adresses mÃ©moires diffÃ¨rent,
+         * alors la premiÃ¨re valeur devient Ã©gale Ã  la seconde.
+         */
+        if(testVille1.equals(testVille2) && testVille1 != testVille2) {
+        	testVille1 = testVille2;
+        }
+        System.out.println(testVille1 == testVille2); //retourne true
         
 	}
 
