@@ -1,6 +1,6 @@
 package recensement;
 
-public class Ville {
+public class Ville implements Comparable<Ville> {
 
 	String codeRegion;
 	String nomRegion;
@@ -117,5 +117,22 @@ public class Ville {
 		Ville other = (Ville) object;
 		return nomCommune.equals(other.getNomCommune());
 	}
+
+	@Override
+	
+
+		public int compareTo(Ville other) {
+		if(this.getPopTotale() > other.getPopTotale()) {
+			return 1;
+			}         
+		if(this.getPopTotale() < other.getPopTotale()) {
+			return -1;
+			}
+		return 0;
+		}
+	
+
+	
+	
 
 }

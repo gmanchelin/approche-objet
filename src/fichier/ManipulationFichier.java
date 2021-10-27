@@ -13,7 +13,7 @@ public class ManipulationFichier {
 	 public static void main(String[] args) throws IOException {
 	        
 		 	/**
-		 	* Copier/coller du fichier recensement.csv dans le même répertoire (autre nom)
+		 	* Copier/coller du fichier recensement.csv dans le mï¿½me rï¿½pertoire (autre nom)
 		  	*/
 		 	Path pathOrigine = Paths.get("C:\\Users\\Trigaltz\\Documents\\COURS\\2021-2023 - CDA\\02 - Java\\6 - Java objet\\J5_J6 - Cours\\TP\\recensement.csv");
 		 	Path pathDestination = Paths.get("C:\\Users\\Trigaltz\\Documents\\COURS\\2021-2023 - CDA\\02 - Java\\6 - Java objet\\J5_J6 - Cours\\TP\\recensement2.csv");
@@ -25,9 +25,9 @@ public class ManipulationFichier {
 		 	List<String> lecture = Files.readAllLines(pathOrigine, StandardCharsets.UTF_8);
 		 	
 		 	/**
-		 	 * Récupération du fichier et création d'un nouveau ne comportant que :
+		 	 * Rï¿½cupï¿½ration du fichier et crï¿½ation d'un nouveau ne comportant que :
 		 	 * - Les villes de plus de 25000 habitants
-		 	 * - Uniquement les informations de nom de ville, de code département et de population 
+		 	 * - Uniquement les informations de nom de ville, de code dï¿½partement et de population 
 		 	 */
 	        Path pathFile = Paths.get("C:\\Users\\Trigaltz\\Documents\\COURS\\2021-2023 - CDA\\02 - Java\\6 - Java objet\\J5_J6 - Cours\\TP\\recensement.csv");
 	        List<String> lines = Files.readAllLines(pathFile, StandardCharsets.UTF_8);

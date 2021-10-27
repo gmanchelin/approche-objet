@@ -5,13 +5,13 @@ public class TestEnumeration {
 	public static void main(String[] args) {
 
 		Saison[] saisons = Saison.values();
-		for (Saison listingSaisons : saisons) {
-			System.out.println(listingSaisons.getOrdre() + ". " + listingSaisons.getLibelle());
+		for (Saison saison : saisons) {
+			System.out.println(saison.getNumero() + ". " + saison.getLibelle());
 		}
 		
 
 		String libelle = "Automne";
-		System.out.println(Saison.getSaisonByLibelle(libelle));
+		System.out.println(Saison.getSaison(libelle));
 		
 		
 		

@@ -2,56 +2,65 @@ package fr.diginamic.testenumeration;
 
 public enum Saison {
 	
-	ETE("Eté", 1), AUTOMNE("Automne", 2), HIVER("Hiver", 3), PRINTEMPS("Printemps", 4);
-	
+	/**
+	 * Printemps - 1ère saison
+	 */
+	PRINTEMPS("Printemps", 1),
+	/**
+	 * Eté - 2ème saison
+	 */
+	ETE("Eté", 2),
+	/**
+	 * Automne - 3ème saison
+	 */
+	AUTOMNE("Automne", 3),
+	/**
+	 * Hiver - 4ème saison
+	 */
+	HIVER("Hiver", 4);
+
+	/** Libellé de la saison */
 	private String libelle;
-	private int ordre;
-
-	/**
-	 * Constructeur
-	 * @param libelle
-	 * @param ordre
-	 */
-	private Saison(String libelle, int ordre) {
-		this.libelle = libelle;
-		this.ordre = ordre;
-	}
-
 	
-	/**
-	 * Getters et setters
-	 * @return
+	/** Ordre de la saison dans l'année */
+	private int numero;
+	
+	/** Constructeur
+	 * @param libelle libellé
+	 * @param numero numéro d'ordre
 	 */
-	public String getLibelle() {
-		return libelle;
-	}
-
-	public void setLibelle(String libelle) {
+	private Saison(String libelle, int numero) {
 		this.libelle = libelle;
+		this.numero = numero;
 	}
-
-	public int getOrdre() {
-		return ordre;
-	}
-
-	public void setOrdre(int ordre) {
-		this.ordre = ordre;
-	}
-		
-	/**
-	 * Recherche d'une saison à partir de son libellé
-	 * @param libelle
-	 * @return saison
+	
+	/** Recherche une saison en fonction de son libellé
+	 * @param libelle libellé
+	 * @return Saison
 	 */
-	public static Saison getSaisonByLibelle(String libelle) {
+	public static Saison getSaison(String libelle) {
+		
 		Saison[] saisons = Saison.values();
-		for (Saison saison : saisons) {
-			if (libelle.equals(saison.getLibelle())) {
+		for (Saison saison: saisons) {
+			if (saison.getLibelle().equals(libelle)) {
 				return saison;
 			}
 		}
 		return null;
+	}
+
+	/** Getter
+	 * @return libelle
+	 */
+	public String getLibelle() {
+		return libelle;
+	}
 	
+	/** Getter
+	 * @return numero
+	 */
+	public int getNumero() {
+		return numero;
 	}
 	
 }
